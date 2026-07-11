@@ -1,6 +1,6 @@
 namespace Logistics.Models
 {
-    public class LogisticItem
+    public class LogisticsItem
     {
         public int Id {get; set;}
         public string ItemName {get; set;}
