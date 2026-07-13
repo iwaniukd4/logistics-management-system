@@ -1,11 +1,47 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div id="app">
+    <b-navbar
+      toggleable="lg"
+      type="dark"
+      variant="primary"
+    >
+      <b-container>
+        <b-navbar-brand href="#">
+          Logistics Management System
+        </b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse">
+        </b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item
+              to="/logistics"
+              class="nav-link"
+            >
+              Logistics Items List
+            </b-nav-item>
+            <b-nav-item
+              to="/logistics/add"
+              class="nav-link"
+            >
+              Add New Logistics Item
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
+    <b-container class="mt-4">
+      //renders components
+      <router-view />
+    </b-container>
+  </div>
 </template>
-
-<style scoped></style>
+<script>
+export default {
+  name: 'App',
+};
+</script>
+<style>
+.nav-link {
+  cursor: pointer;
+}
+</style>
