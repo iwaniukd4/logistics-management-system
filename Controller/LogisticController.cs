@@ -27,7 +27,13 @@ namespace Logistics.Controllers
         };
 
         [HttpGet]
-        public ActionResult<IEnumerable<LogisticsItem>> GetItem(int id)
+        public ActionResult<IEnumerable<LogisticsItem>> GetItems()
+        {
+            return Ok(logisticsItems);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<LogisticsItem> GetItem(int id)
         {
             var item = logisticsItems.Find(i => i.Id == id);
 
@@ -35,6 +41,7 @@ namespace Logistics.Controllers
             {
                 return NotFound();
             }
+
             return Ok(item);
         }
 

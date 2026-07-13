@@ -30,7 +30,7 @@
       </b-container>
     </b-navbar>
     <b-container class="mt-4">
-      //renders components
+      <!--renders components -->
       <router-view />
     </b-container>
   </div>
